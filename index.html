@@ -6,13 +6,129 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+     	console.log(window.geemails)
+     	console.log(window.getNewMessage())
+
+     	var counter = window.geemails.length
+     	var counterdiv = document.getElementById("counter");
+    	counterdiv.innerHTML = counter;
+
+     	for(var i=0; i<window.geemails.length; i++) {
+     		console.log(window.geemails[i])
+
+     	var container = document.getElementById("main");
+     	var emailSenderDiv = document.createElement('div');
+     	emailSenderDiv.addEventListener("click", displayBody)
+     	emailSenderDiv.className = "sender"
+     	emailSenderDiv.id = i;
+     	emailSenderDiv.innerHTML = window.geemails[i].sender;
+     	container.appendChild(emailSenderDiv);
+
+     	var emailSubjectDiv = document.createElement('div');
+     	emailSubjectDiv.addEventListener("click", displayBody)
+     	emailSubjectDiv.className = "subject"
+     	emailSubjectDiv.id = i;
+     	emailSubjectDiv.innerHTML = window.geemails[i].subject;
+     	container.appendChild(emailSubjectDiv);
+
+     	var emailDateDiv = document.createElement('div');
+     	emailDateDiv.addEventListener("click", displayBody)
+     	emailDateDiv.className = "date"
+     	emailDateDiv.id = i;
+     	emailDateDiv.innerHTML = window.geemails[i].date;
+     	container.appendChild(emailDateDiv);
+
+     	var emailBodyDiv = document.createElement('div');
+     	emailBodyDiv.className = "body"
+     	emailBodyDiv.id = "body" + i;
+     	emailBodyDiv.innerHTML = window.geemails[i].body;
+     	container.appendChild(emailBodyDiv); 
+
+     	function displayBody(id){
+     		var displayBodyDiv = document.getElementById("body" +this.id) 
+     		console.log(displayBodyDiv)
+     		displayBodyDiv.style.display = "block"
+     	}
+
+     	}
+
+     	setInterval(function(){
+     		var newmessage = window.getNewMessage()
+     		console.log(newmessage) 
+     	
+     	var container = document.getElementById("main");
+     	var emailSenderDiv = document.createElement('div');
+     	emailSenderDiv.addEventListener("click", displayBody)
+     	emailSenderDiv.className = "sender"
+     	emailSenderDiv.id = counter;
+     	emailSenderDiv.innerHTML = newmessage.sender;
+     	container.appendChild(emailSenderDiv);
+
+     	var emailSubjectDiv = document.createElement('div');
+     	emailSubjectDiv.addEventListener("click", displayBody)
+     	emailSubjectDiv.className = "subject"
+     	emailSubjectDiv.id = counter;
+     	emailSubjectDiv.innerHTML = newmessage.subject;
+     	container.appendChild(emailSubjectDiv);
+
+     	var emailDateDiv = document.createElement('div');
+     	emailDateDiv.addEventListener("click", displayBody)
+     	emailDateDiv.className = "date"
+     	emailDateDiv.id = counter;
+     	emailDateDiv.innerHTML = newmessage.date;
+     	container.appendChild(emailDateDiv);
+
+     	var emailBodyDiv = document.createElement('div');
+     	emailBodyDiv.className = "body"
+     	emailBodyDiv.id = "body" + counter;
+     	emailBodyDiv.innerHTML = newmessage.body;
+     	container.appendChild(emailBodyDiv); 
+
+     	counter = counter + 1;
+    	var counterDiv = document.getElementById("counter");
+    	counterDiv.innerHTML = counter;
+
+    	function displayBody(id){
+     		var displayBodyDiv = document.getElementById("body" +this.id) 
+     		console.log(displayBodyDiv)
+     		displayBodyDiv.style.display = "block"
+     	}
+
+
+     	}, 5000);
+
       };
     </script>
 	</head>
 	<body>
+		<div class="transbox">
 		<div class="container" id="main">
-			Build Me!
+			<header class="header"><h1 class="header">
+				GeeMail: A Web Application for Email
+			</header>
+
+			<div class="countertitle">
+				Inbox Count:
+			</div>
+			<div class="counter" id="counter"></div>
+			
+
+			<div class="sendertitle">
+				Sender
+			</div>
+			<div class="subjecttitle">
+				Subject
+			</div>
+			<div class="datetitle">
+				Date
+			</div>
+
+			<div class="sender"></div>
+			<div class="subject"></div>
+			<div class="date"></div>
+			<div class="body"></div>
 		</div>
+		</div>
+
 	</body>
 </html>
