@@ -1,0 +1,77 @@
+body {
+	background: #5d9ab2 url("mountain.jpg") top left;
+	background-attachment: fixed;
+	background-color: #df80ff;
+	margin-top: 80px;
+	margin-bottom: 80px;
+    margin-right: 80px;
+    margin-left: 100px;
+    max-width: 1000px;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+div.transbox {
+  background-color: rgba(220, 220, 220, 0.6);
+  filter: alpha(opacity=60);
+}
+
+div.sendertitle {
+	float: left;
+	margin-left: 20px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+div.subjecttitle {
+	float: left;
+	margin-left: 200px;
+	position: absolute;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+div.datetitle {
+	margin-left: 600px;
+	font-weight: bold;
+	text-decoration: underline;
+	padding-bottom: 10px;
+}
+
+div.sender {
+	float: left;
+	margin-left: 20px;
+}
+
+div.subject {
+	float: left;
+	margin-left: 200px;
+	position: absolute;
+}
+
+div.date {
+	margin-left: 600px;
+}
+
+div.body {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	display: none;
+	margin-left: 40px;
+	margin-right: 20px;
+}
+
+div.countertitle {
+	float: left;
+	padding-bottom: 20px;
+	margin-left: 20px;
+}
+
+div.counter{
+	margin-left: 130px;
+	padding-bottom: 20px;
+}
+
+h1.header {
+	font-size: 2em;
+	margin-left: 20px;
+}
